@@ -1,0 +1,38 @@
+books = [
+    {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "publisher": "Scribner",
+        "publication_year": 1925,
+        "pages": 218,
+        "language": "English",
+    },
+    {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "publisher": "J.B. Lippincott & Co.",
+        "publication_year": 1960,
+        "pages": 281,
+        "language": "English",
+    },
+    {
+        "id": 3,
+        "title": "1984",
+        "author": "George Orwell",
+        "publisher": "Secker & Warburg",
+        "publication_year": 1949,
+        "pages": 328,
+        "language": "English",
+    },
+    {
+        "id": 4,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "publisher": "T. Egerton",
+        "publication_year": 1813,
+        "pages": 279,
+        "language": "English",
+    },
+]
