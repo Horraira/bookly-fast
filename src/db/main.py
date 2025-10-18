@@ -12,9 +12,6 @@ engine = AsyncEngine(
 
 async def init_db() -> None:
     async with engine.begin() as conn:
-        # Here you can create your database tables
-        statement = text("SELECT 'hello';")
-        result = await conn.execute(statement)
-        print(result.all())
+        from src.books.models import Book
 
-        # await conn.run_sync(SQLModel.metadata.create_all)
+        await conn.run_sync(SQLModel.metadata.create_all)
