@@ -20,9 +20,9 @@ class Book(SQLModel, table=True):
     publication_year: int | None = None
     pages: int | None = None
     language: str | None = None
-    created_at: datetime = Field(Column(pg.TIMESTAMP, default=datetime.now))
+    created_at: datetime = Field(sa_column=Column(pg.TIMESTAMP, default=datetime.now))
     updated_at: datetime = Field(
-        Column(pg.TIMESTAMP, default=datetime.now, onupdate=datetime.now)
+        sa_column=Column(pg.TIMESTAMP, default=datetime.now, onupdate=datetime.now)
     )
 
     def __repr__(self) -> str:
