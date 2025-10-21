@@ -19,9 +19,9 @@ class BookService:
     async def create_book(self, book_data: BookCreateModel, session: AsyncSession):
         book_data_dict = book_data.model_dump()
         new_book = Book(**book_data_dict)
+
         session.add(new_book)
         await session.commit()
-        await session.refresh(new_book)
         return new_book
 
     async def update_book(
@@ -44,9 +44,9 @@ class BookService:
     async def delete_book(self, book_uid: str, session: AsyncSession):
         book_to_delete = await self.get_book(book_uid, session)
 
-        if book_to_delete is not None:
-            await session.delete(book_to_delete)
-            await session.commit()
-            return {}
-        else:
-            return None
+        if book_to_delete is None:
+            return False
+
+        await session.delete(book_to_delete)
+        await session.commit()
+        return True

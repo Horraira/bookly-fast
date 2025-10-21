@@ -21,9 +21,7 @@ class Book(SQLModel, table=True):
     pages: int | None = None
     language: str | None = None
     created_at: datetime = Field(sa_column=Column(pg.TIMESTAMP, default=datetime.now))
-    updated_at: datetime = Field(
-        sa_column=Column(pg.TIMESTAMP, default=datetime.now, onupdate=datetime.now)
-    )
+    updated_at: datetime = Field(sa_column=Column(pg.TIMESTAMP, default=datetime.now))
 
     def __repr__(self) -> str:
         return f"<Book(title={self.title}, author={self.author})>"
